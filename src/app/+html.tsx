@@ -21,6 +21,21 @@ export default function Root({ children }: PropsWithChildren) {
         <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
         <link rel="apple-touch-icon-precomposed" href="/apple-touch-icon.png" />
         <ScrollViewStyleReset />
+        <style dangerouslySetInnerHTML={{
+          __html: `
+            #netlify-drawer-container,
+            [data-netlify-drawer],
+            .netlify-drawer,
+            [class*="netlify-feedback"],
+            iframe[src*="netlify"],
+            div[class*="netlify-badge"] {
+              display: none !important;
+              visibility: hidden !important;
+              opacity: 0 !important;
+              pointer-events: none !important;
+            }
+          `
+        }} />
       </head>
       <body>{children}</body>
     </html>
